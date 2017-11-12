@@ -65,9 +65,9 @@ DOWNLOADER_MIDDLEWARES = {
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'CoffeeSpider.pipelines.CoffeespiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'CoffeeSpider.pipelines.MysqlTwistedPipline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -91,3 +91,13 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 RANDOM_UA_TYPE = "firefox"
+
+# DB config
+MYSQL_HOST = "127.0.0.1"
+MYSQL_DB = "coffee_spider"
+MYSQL_USER = "root"
+MYSQL_PASSWORD = "qwer"
+
+# date format
+SQL_DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"
+SQL_DATE_FORMAT = "%Y-%m-%d"
